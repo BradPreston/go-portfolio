@@ -4,6 +4,7 @@ import (
 	"flag"
 	"log"
 	"net/http"
+	"os"
 )
 
 type config struct {
@@ -22,13 +23,20 @@ func main() {
     flag.StringVar(&cfg.saticDir, "static-dir", "./ui/static", "Path to static assets")
     flag.Parse()
 
-    app := &application{}
+    infoLog := log.New(os.Stdout, "INFO\t", log.Ldate|log.Ltime)
+    errorLog := log.New(os.Stderr, "ERROR\t", log.Ldate|log.Ltime|log.Lshortfile)
+
+    app := &application{
+        errorLog: errorLog,
+        infoLog: infoLog,
+    }
 
     srv := &http.Server{
         Addr: cfg.addr,
         Handler: app.routes(),
     }
 
+    infoLog.Printf("Starting server on %s", cfg.addr)
     err := srv.ListenAndServe()
-    log.Fatal(err)
+    errorLog.Fatal(err)
 }
