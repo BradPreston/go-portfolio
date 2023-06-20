@@ -11,7 +11,10 @@ type config struct {
     saticDir    string
 }
 
-type application struct {}
+type application struct {
+    errorLog *log.Logger
+    infoLog *log.Logger
+}
 
 func main() {
     var cfg config
