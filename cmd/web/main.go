@@ -1,6 +1,10 @@
 package main
 
-import "flag"
+import (
+	"flag"
+	"log"
+	"net/http"
+)
 
 type config struct {
     addr        string
@@ -16,4 +20,12 @@ func main() {
     flag.Parse()
 
     app := &application{}
+
+    srv := &http.Server{
+        Addr: cfg.addr,
+        Handler: app.routes(),
+    }
+
+    err := srv.ListenAndServe()
+    log.Fatal(err)
 }
