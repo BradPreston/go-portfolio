@@ -13,8 +13,8 @@ type config struct {
 }
 
 type application struct {
-    errorLog *log.Logger
-    infoLog *log.Logger
+    errorLog    *log.Logger
+    infoLog     *log.Logger
 }
 
 func main() {
