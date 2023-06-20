@@ -1,0 +1,23 @@
+/* variables */
+:root {
+    --black: #2b2a34;
+    --white: #e0e1dd;
+    --gold: #cba72f;
+    --red: #d5635a;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--black);
+    color: var(--white);
+}
+
+main {
+    max-width: 600px;
+    margin: 0 auto;
+}
