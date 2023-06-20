@@ -70,3 +70,24 @@ section {
    justify-content: space-between;
    gap: 20px;
 }
+
+@media only screen and (max-width: 640px) {
+    .container {
+        max-width: 440px;
+    }
+
+    .skills {
+        width: 70%;
+    }
+}
+
+
+@media only screen and (max-width: 480px) {
+    .container {
+        max-width: 300px;
+    }
+
+    .skills {
+        width: 100%;
+    }
+}
