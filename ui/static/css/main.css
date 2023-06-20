@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 
 /* variables */
 :root {
@@ -6,9 +6,11 @@
     --white: #e0e1dd;
     --gold: #cba72f;
     --red: #d5635a;
+
+    font-size: 62.5%;
 }
 
-html {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -19,6 +21,11 @@ body {
     color: var(--white);
     font-family: "Poppins", Arial, Helvetica, sans-serif;
     line-height: 1.5;
+    font-size: 1.6rem;
+}
+
+main {
+    padding: 80px 0;
 }
 
 .container {
@@ -27,5 +34,39 @@ body {
 }
 
 h1 {
-    color: var(--red);
+    color: var(--gold);
+    background: var(--black);
+    font-size: 3.2rem;
+    font-weight: 400;
+    padding: 10px 0;
+}
+
+h2 {
+    font-size: 2.4rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+ul {
+    list-style: inside;
+}
+
+section {
+    margin-top: 40px;
+}
+
+.skills {
+    width: 50%;
+}
+
+.stacks {
+   display: flex;
+   justify-content: space-between;
+   gap: 20px;
 }
