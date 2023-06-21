@@ -22,7 +22,18 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
         return
     }
 
-    err = ts.ExecuteTemplate(w, "base", ts)
+    preferredStack := []string{"NextJS","TypeScript","Node","Golang","SQL","NoSQL"}
+    previousTech := []string{"Express","PHP","Laravel","Docker","MongoDB","PostgreSQL"}
+
+    var templateData = struct{
+        PreferredStack []string
+        PreviousTech []string
+    }{
+        preferredStack,
+        previousTech,
+    }
+
+    err = ts.ExecuteTemplate(w, "base", templateData)
     if err != nil {
         app.serverError(w, err)
         return

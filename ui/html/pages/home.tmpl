@@ -12,24 +12,18 @@
             <div class="preferred-stack">
                 <h3>Preferred stack:</h3>
                 <ul>
-                    <li>NextJS</li>
-                    <li>TypeScript</li>
-                    <li>Node</li>
-                    <li>Golang</li>
-                    <li>SQL</li>
-                    <li>NoSQL</li>
+                {{range .PreferredStack}}
+                <li>{{.}}</li>
+                {{end}}
                 </ul>
             </div>
 
             <div class="past-tech">
                 <h3>Tech I've Used:</h3>
                 <ul>
-                    <li>Express</li>
-                    <li>PHP</li>
-                    <li>Laravel</li>
-                    <li>Docker</li>
-                    <li>MongoDB</li>
-                    <li>PostgreSQL</li>
+                {{range .PreviousTech}}
+                <li>{{.}}</li>
+                {{end}}
                 </ul>
             </div>
         </div>
