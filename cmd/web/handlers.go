@@ -3,6 +3,8 @@ package main
 import (
 	"html/template"
 	"net/http"
+
+	"github.com/BradPreston/go-portfolio/internal"
 )
 
 func (app *application) home(w http.ResponseWriter, r *http.Request) {
@@ -25,13 +27,19 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
     preferredStack := []string{"NextJS","TypeScript","Node","Golang","SQL","NoSQL"}
     previousTech := []string{"Express","PHP","Laravel","Docker","MongoDB","PostgreSQL"}
 
+    posts, err := internal.FetchPosts()
+    app.serverError(w, err)
+
     var templateData = struct{
         PreferredStack []string
         PreviousTech []string
+        Posts []*internal.Post
     }{
         preferredStack,
         previousTech,
+        posts,
     }
+
 
     err = ts.ExecuteTemplate(w, "base", templateData)
     if err != nil {
