@@ -28,7 +28,9 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
     previousTech := []string{"Express","PHP","Laravel","Docker","MongoDB","PostgreSQL"}
 
     posts, err := internal.FetchPosts()
-    app.serverError(w, err)
+    if err != nil {
+        app.serverError(w, err)
+    }
 
     var templateData = struct{
         PreferredStack []string

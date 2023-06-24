@@ -29,6 +29,15 @@
             </div>
         </div>
 
-        <a class="btn" href="/static/pdf/Brad-Preston-Resume-2023.pdf" download="brad-preston-resume.pdf">Download my resume</a>
+        <a class="button" href="/static/pdf/Brad-Preston-Resume-2023.pdf" download="brad-preston-resume.pdf">Download my resume</a>
+    </section>
+
+    <section class="posts">
+        <h2>My Recent Blog Posts</h2>
+        <div class="buttons-container">
+        {{range .Posts}}
+            <a class="button" href="{{.Slug}}">{{.Title}}</a>
+        {{end}}
+        </div>
     </section>
 {{end}}
