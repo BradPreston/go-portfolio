@@ -26,9 +26,19 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
         return
     }
 
+    type project struct{
+        Title   string
+        Slug    string
+    }
+
     preferredStack := []string{"NextJS","TypeScript","Node","Golang","SQL","NoSQL"}
     previousTech := []string{"Express","PHP","Laravel","Docker","MongoDB","PostgreSQL"}
-    projects := []string{"one-with-the-riverbed","aarons-music-service","get-pokemon-data-from-api","kazoo48"}
+    projects := []project{
+        { "One With the Riverbed", "/one-with-the-riverbed" },
+        { "Aaron's Music Service", "/aarons-music-service" },
+        { "Get Pokemon Data From API", "/get-pokemon-data-from-api" },
+        { "Kazoo48 Film Festival", "/kazoo48" },
+    }
 
     posts, err := internal.FetchPosts()
     if err != nil {
@@ -39,7 +49,7 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
         PreferredStack []string
         PreviousTech []string
         Posts []*internal.Post
-        projects []string
+        projects []project
     }{
         preferredStack,
         previousTech,
