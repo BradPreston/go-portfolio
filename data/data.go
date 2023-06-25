@@ -9,7 +9,7 @@ type Project struct {
     URL         string
 }
 
-func GetWorkData(p string) (Project, error) {
+func GetWorkData(p string) (*Project, error) {
     projects := map[string]Project{
         "one-with-the-riverbed": {
             "One With the Riverbed",
@@ -36,17 +36,13 @@ func GetWorkData(p string) (Project, error) {
             "https://kazoo48.com",
         },
     }
-
-    var r Project
-
+ 
     result, ok := projects[p]
 
     if !ok {
-        return r, fmt.Errorf("%s", "no results found")
+        return nil, fmt.Errorf("%s", "no results found")
     }
 
-    r = result
-
-    return r, nil
+    return &result, nil
 }
 
