@@ -28,6 +28,7 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
 
     preferredStack := []string{"NextJS","TypeScript","Node","Golang","SQL","NoSQL"}
     previousTech := []string{"Express","PHP","Laravel","Docker","MongoDB","PostgreSQL"}
+    projects := []string{"one-with-the-riverbed","aarons-music-service","get-pokemon-data-from-api","kazoo48"}
 
     posts, err := internal.FetchPosts()
     if err != nil {
@@ -38,10 +39,12 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
         PreferredStack []string
         PreviousTech []string
         Posts []*internal.Post
+        projects []string
     }{
         preferredStack,
         previousTech,
         posts,
+        projects,
     }
 
 
