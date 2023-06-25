@@ -3,6 +3,7 @@
 {{define "title"}}Work{{end}}
 {{define "main"}}
 
+<a class="button" href="/">Go back home</a>
 <h1>{{.Title}}</h1>
 <p>{{.Description}}<p>
 <p>Stack:</p>
@@ -11,5 +12,5 @@
     <li>{{.}}</li>
     {{end}}
 </ul>
-<a href="{{.URL}}" target="_blank">{{.URL}}</a>
+<a class="button" href="{{.URL}}" target="_blank">{{.URL}}</a>
 {{end}}
