@@ -59,4 +59,13 @@
         {{end}}
         </ul>
     </section>
+
+    <section class="playlists">
+        <h2>My favorite playlists</h2>
+        <div class="buttons-container">
+        {{range .Playlists}}
+            <a href="{{.Slug}}" class="button">{{.Title}}</a>
+        {{end}}
+        </div>
+    </section>
 {{end}}
