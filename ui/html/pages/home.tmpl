@@ -49,4 +49,14 @@
         {{end}}
         </div>
     </section>
+
+    <section class="hobbies">
+        <h2>My hobbies</h2>
+        <p class="description">When I'm not sitting at my computer, you can find me:</p>
+        <ul>
+        {{range .Hobbies}}
+            <li>{{.}}</li>
+        {{end}}
+        </ul>
+    </section>
 {{end}}
