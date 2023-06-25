@@ -1,0 +1,15 @@
+
+{{template "base" .}}
+{{define "title"}}Work{{end}}
+{{define "main"}}
+
+<h1>{{.Title}}</h1>
+<p>{{.Description}}<p>
+<p>Stack:</p>
+<ul>
+    {{range .Stack}}
+    <li>{{.}}</li>
+    {{end}}
+</ul>
+<a href="{{.URL}}" target="_blank">{{.URL}}</a>
+{{end}}
