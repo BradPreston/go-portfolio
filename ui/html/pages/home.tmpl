@@ -68,4 +68,13 @@
         {{end}}
         </div>
     </section>
+
+    <section class="contact">
+        <h2>Contact me</h2>
+        <div class="buttons-container">
+        {{range .Contacts}}
+            <a href="{{.Slug}}" class="button">{{.Title}}</a>
+        {{end}}
+        </div>
+    </section>
 {{end}}
