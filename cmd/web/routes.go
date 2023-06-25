@@ -1,14 +1,19 @@
 package main
 
-import "net/http"
+import (
+	"net/http"
 
-func (app *application) routes() *http.ServeMux {
-    mux := http.NewServeMux()
+	"github.com/go-chi/chi/v5"
+)
+
+func (app *application) routes() http.Handler {
+    mux := chi.NewRouter()
 
     fileserver := http.FileServer(http.Dir("./ui/static"))
-    mux.Handle("/static/", http.StripPrefix("/static", fileserver))
+    mux.Handle("/static/*", http.StripPrefix("/static/", fileserver))
 
-    mux.HandleFunc("/", app.home)
+    mux.Get("/", app.home)
+    mux.Get("/{project}", app.work)
 
     return mux
 }
