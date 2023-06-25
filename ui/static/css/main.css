@@ -125,4 +125,8 @@ section {
     .skills {
         width: 100%;
     }
+
+    .buttons-container > .button {
+        width: 100%;
+    }
 }
