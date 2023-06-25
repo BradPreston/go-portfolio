@@ -33,9 +33,18 @@
     </section>
 
     <section class="posts">
-        <h2>My Recent Blog Posts</h2>
+        <h2>My recent blog posts</h2>
         <div class="buttons-container">
         {{range .Posts}}
+            <a class="button" href="{{.Slug}}">{{.Title}}</a>
+        {{end}}
+        </div>
+    </section>
+
+    <section class="projects">
+        <h2>My work</h2>
+        <div class="buttons-container">
+        {{range .Projects}}
             <a class="button" href="{{.Slug}}">{{.Title}}</a>
         {{end}}
         </div>
