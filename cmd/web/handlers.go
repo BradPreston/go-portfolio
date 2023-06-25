@@ -49,7 +49,7 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
         PreferredStack []string
         PreviousTech []string
         Posts []*internal.Post
-        projects []project
+        Projects []project
     }{
         preferredStack,
         previousTech,
