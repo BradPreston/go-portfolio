@@ -72,8 +72,8 @@ section {
 
 .sticky-header {
     position: sticky;
-    height: 69px;
-    z-index: 99;
+    height: 69px !important;
+    z-index: 99 !important;
     top: 0;
     border-bottom-color: var(--gold);
     border-bottom-style: solid;
