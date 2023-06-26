@@ -81,6 +81,8 @@ section {
 }
 
 .button {
+    display: block;
+    width: fit-content;
     border: 2px solid var(--red);
     border-radius: 5px;
     color: var(--red);
@@ -126,7 +128,7 @@ section {
         width: 100%;
     }
 
-    .buttons-container > .button {
+    .button {
         width: 100%;
     }
 
